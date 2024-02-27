@@ -30,30 +30,29 @@
 
 
 
-  <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-white" aria-label="Sidebar">
-    <div class="h-full shadow-xl dark:bg-gray-900">
-      <div class="flex items-center justify-between p-4 border-b dark:border-gray-700">
-        <!-- Remove the Flowbite logo and name -->
-        <!-- Remove the light and dark mode button -->
-      </div>
-      <nav class="overflow-y-auto">
-        <ul class="p-2 space-y-2 text-sm text-black">
-          <li>
-            <a routerLink="/dashboard3" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">User Dashboard</a>
-          </li>
-          <li>
-            <a routerLink="/weekly" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Weekly Data Input</a>
-          </li>
-          <li>
-            <a routerLink="/weekupdate" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Weekly Data Metrics Graphs</a>
-          </li>
-          <li>
-            <a routerLink="/nearest" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Contact Nearest Doctor</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </aside>
+<aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-white" aria-label="Sidebar">
+  <nav class="h-full shadow-xl dark:bg-gray-900">
+    <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse" style="margin-top: 10px;margin-left: 20px">
+      <img src="/assets/logo_white.gif" class="h-20" alt="Flowbite Logo" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Vital Sync</span>
+    </a>
+    <ul class="p-2 space-y-2 text-sm text-black" style="margin-top: 100px;">
+      <li>
+        <a routerLink="/dashboard3" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200 text-black">User Dashboard</a>
+      </li>
+      <li>
+        <a routerLink="/weekly" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Weekly Data Input</a>
+      </li>
+      <li>
+        <a routerLink="/weekupdate" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Weekly Data Metrics Graphs</a>
+      </li>
+      <li>
+        <a routerLink="/nearest" class="block p-2 transition-colors rounded-md bg-blue-800 hover:bg-blue-800 text-white">Contact Nearest Doctor</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
   
   
   <div class="p-4 sm:ml-64">
