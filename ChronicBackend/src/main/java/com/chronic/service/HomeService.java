@@ -1,4 +1,6 @@
 package com.chronic.service;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -62,6 +64,46 @@ public class HomeService {
     public WeeklyAnalysis analysisOfUser(String username) {
     	WeeklyAnalysis report=analysisRepo.findByUsername(username);
     	return report;
+    }
+    
+    public User disease(User user) {
+    	User user1 = userRepo.findByEmail(user.getEmail());
+    	
+    	user1.setDisease(user.getDisease());
+    	user1.setBmi(user.getBmi());
+    	user1.setHba1c(user.getHba1c());
+    	user1.setPefr(user.getPefr());
+    	user1.setSugar(user.getSugar());
+    	
+    	return userRepo.save(user1);
+    	
+    	
+    }
+
+    public List<Doctor> location(String city, String state, String country) {
+        // First, try to find a doctor in the user's city
+        List<Doctor> doctorsInCity = doctorRepo.findByCity(city);
+        if (!doctorsInCity.isEmpty()) {
+            
+            return doctorsInCity;
+        }
+
+    
+        List<Doctor> doctorsInState = doctorRepo.findByState(state);
+        if (!doctorsInState.isEmpty()) {
+            
+            return doctorsInState;
+        }
+
+        // If no doctors found in the user's state, try to find a doctor in the user's country
+        List<Doctor> doctorsInCountry = doctorRepo.findByCountry(country);
+        if (!doctorsInCountry.isEmpty()) {
+           
+            return doctorsInCountry;
+        }
+
+        
+        return null;
     }
 
 	
