@@ -1,7 +1,7 @@
-<section class="p-4">
+<section class="weekly-metrics-section p-4">
     <h2 class="text-2xl font-semibold mb-4">Weekly Metrics Input</h2>
   
-    <form (submit)="submitWeeklyMetrics()">
+    <form (submit)="submitWeeklyMetrics()" class="form-container">
       <div class="mb-4">
         <label for="fastingSugar" class="block text-gray-600">Fasting Sugar Level:</label>
         <input type="number" id="fastingSugar" name="fastingSugar" class="form-input" [(ngModel)]="fastingSugar" required>
@@ -26,15 +26,37 @@
         <label for="pefr" class="block text-gray-600">PEFR:</label>
         <input type="number" id="pefr" name="pefr" class="form-input" [(ngModel)]="pefr" required>
       </div>
+
+      <div class="mb-4">
+        <label for="date" class="block text-gray-600">Date:</label>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="date" name="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+      
   
-      <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button>
+      <button type="submit" class="submit-button bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button>
     </form>
-  </section>
-  
-  
+    <section class="fetched-weekly-metrics-section p-4">
+        <h2 class="text-2xl font-semibold mb-4">Fetched Weekly Metrics</h2>
+        <div *ngIf="weeklyMetricsList.length > 0">
+          <div *ngFor="let metric of weeklyMetricsList" class="metrics-card">
+            <p>Date: {{ metric.date | date: 'yyyy-MM-dd' }}</p>
+            <p>Fasting Sugar Level: {{ metric.fastingSugar }}</p>
+            <p>Post-Eating Sugar Level: {{ metric.postEatingSugar }}</p>
+            <p>HbA1c Level: {{ metric.hba1c }}</p>
+            <p>BMI: {{ metric.bmi }}</p>
+            <p>PEFR: {{ metric.pefr }}</p>
+          </div>
+        </div>
+        <div *ngIf="weeklyMetricsList.length === 0">
+          <p>No weekly metrics found.</p>
+        </div>
+      </section>
+      
 
 
-<aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-white" aria-label="Sidebar">
+<aside id="default-sidebar" class="sidebar fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-white" aria-label="Sidebar">
     <div class="h-full shadow-xl dark:bg-gray-900">
       <div class="flex items-center justify-between p-4 border-b dark:border-gray-700">
         <!-- Remove the Flowbite logo and name -->
@@ -57,4 +79,4 @@
         </ul>
       </nav>
     </div>
-  </aside>
+</aside>

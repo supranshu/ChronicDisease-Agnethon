@@ -18,6 +18,11 @@ import { Dashboard3Component } from './pages/dashboard3/dashboard3.component';
 import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
 import { NearestComponent } from './pages/nearest/nearest.component';
 import { WeeklyComponent } from './pages/weekly/weekly.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+import { WeeklyGraphComponent } from './pages/weekly-graph/weekly-graph.component';
+
 
 
  
@@ -36,14 +41,15 @@ import { WeeklyComponent } from './pages/weekly/weekly.component';
     Dashboard3Component,
     DocdashboardComponent,
     NearestComponent,
-    WeeklyComponent
+    WeeklyComponent,
+    WeeklyGraphComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatSnackBarModule,
-    HttpClientModule,BrowserAnimationsModule
+    HttpClientModule,BrowserAnimationsModule, MatDatepickerModule, MatInputModule, MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
