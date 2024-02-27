@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
-=======
->>>>>>> ea3c415467c0fa0341e683a7b61dd1203236e73f
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -18,15 +15,6 @@ import { Dashboard1Component } from './pages/dashboard1/dashboard1.component';
 import { Dashboard2Component } from './pages/dashboard2/dashboard2.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
-<<<<<<< HEAD
-=======
-
-
-
-
- 
-
->>>>>>> ea3c415467c0fa0341e683a7b61dd1203236e73f
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +32,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     AppRoutingModule,
     FormsModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

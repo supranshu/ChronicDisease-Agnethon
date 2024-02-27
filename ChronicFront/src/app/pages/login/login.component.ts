@@ -26,7 +26,17 @@ export class LoginComponent implements OnInit {
     console.log("login clicked")
     this.http.get<any>(`${baseUrl}/user-login/${this.loginData.email}/${this.loginData.password}`).subscribe(
       (response) => {
-        localStorage.setItem("userData",response)
+        
+
+        localStorage.setItem('age', response.age.toString());
+        localStorage.setItem('city', response.city);
+        localStorage.setItem('country', response.country);
+        localStorage.setItem('email', response.email);
+        localStorage.setItem('phoneNo', response.phoneNo);
+        localStorage.setItem('state', response.state);
+        localStorage.setItem('username', response.username);
+
+        
         this.snack.open("Login successful!!!", '', { duration: 3000 })
         this.router.navigateByUrl("/dashboard1")
       },
