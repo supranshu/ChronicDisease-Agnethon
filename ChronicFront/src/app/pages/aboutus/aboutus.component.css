@@ -1,0 +1,22 @@
+.styling{
+    font-size: 20px;;
+    margin-top: 10px;
+}
+
+.main-section{
+   margin-left: 20px;
+   margin-right: 20px;
+   background: #ddd;
+}
+
+.footer{
+   
+    text-align: center;
+    padding: 2rem;
+    background: #263238af;
+    color: white;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
