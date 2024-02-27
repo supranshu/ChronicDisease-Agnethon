@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="heading">Select your condition</div>
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div>
+      <!-- <label for="condition">Select your health condition:</label> -->
+      <select class="input" id="condition" name="condition" [(ngModel)]="selectedCondition">
+        <option value="" disabled selected class="input">Select</option>
+        <option value="asthma">Asthma</option>
+        <option value="diabetes">Diabetes</option>
+        <option value="hypertension">Hypertension</option>
+      </select>
+    </div>
+    <div class="input" *ngIf="selectedCondition === 'asthma'">
+      <label for="pefr">PEFR Number:</label>
+      <input type="number" id="pefr" name="pefr" [(ngModel)]="additionalInfo.pefr">
+    </div>
+    <div class="input" *ngIf="selectedCondition === 'diabetes'">
+      <label for="sugar">Sugar Level:</label>
+      <input type="number" id="sugar" name="sugar" [(ngModel)]="additionalInfo.sugarLevel">
+    </div>
+    <div class="input" *ngIf="selectedCondition === 'hypertension'">
+      <label for="bp">Blood Pressure:</label>
+      <input type="number" id="bp" name="bp" [(ngModel)]="additionalInfo.bloodPressure">
+    </div>
+    <button type="submit" class="login-button">Submit</button>
+  </form>
+</div>
