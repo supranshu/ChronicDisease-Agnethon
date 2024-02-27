@@ -12,7 +12,7 @@ const genAI = new GoogleGenerativeAI("AIzaSyBboXOV-pXbZEL3LLkfoISXCvPKbpXjPns");
 export class Dashboard2Component {
   
   // Replace with your actual API key and model parameters
-  apiKey = 'AIzaSyBboXOV-pXbZEL3LLkfoISXCvPKbpXjPns';
+  apiKey = 'AIzaSyDAxDhxSjjAmTE4a9Xuxl6cnDOs7y8gaws';
   model = 'gemini-pro';
   parameters = {
     safetySettings: 'MEDIUM',
