@@ -1,5 +1,7 @@
 package com.chronic.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -56,7 +58,18 @@ public class HomeController {
 	}
 	
 	
+	@PostMapping("/disease")
+	public User postDisease(@RequestBody User user) {
+		
+		return service.disease(user);
+	}
 	
+	@GetMapping("/match-location/{city}/{state}/{country}")
+	public List<Doctor> getLocation(@PathVariable("city")String city,@PathVariable("state")String state,@PathVariable("country")String country) {
+		
+		return service.location(city,state,country);
+		
+	}
 	
 
 }

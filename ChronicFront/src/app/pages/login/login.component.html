@@ -25,11 +25,11 @@
 </nav>
 <div class="container">
     <div class="heading">Log In</div>
-    <form action="" class="form">
+    <form class="form">
       <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail">
       <input required="" class="input" type="password" name="password" id="password" placeholder="Password">
       <span class="forgot-password">Don't Have Account?<a routerLink="/signup">SignUp</a></span>
-      <input class="login-button" type="submit" value="Log In">
+      <input (click)="doLogin()" class="login-button" type="submit" value="Log In">
       
     </form>
   </div>
