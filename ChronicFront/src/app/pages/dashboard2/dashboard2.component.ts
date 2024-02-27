@@ -2,11 +2,7 @@
 import { Component } from '@angular/core';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-declare module '@google/generative-ai' {
-  interface GoogleGenerativeAI {
-    generate(input: { textInput: string }): Promise<{ generatedText: string }>;
-  }
-}
+
 const genAI = new GoogleGenerativeAI("AIzaSyBboXOV-pXbZEL3LLkfoISXCvPKbpXjPns");
 @Component({
   selector: 'app-dashboard2',
