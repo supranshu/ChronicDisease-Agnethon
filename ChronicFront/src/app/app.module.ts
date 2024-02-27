@@ -14,6 +14,7 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { Dashboard1Component } from './pages/dashboard1/dashboard1.component';
 import { Dashboard2Component } from './pages/dashboard2/dashboard2.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { Dashboard3Component } from './pages/dashboard3/dashboard3.component';
 
 
  
@@ -28,7 +29,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     AboutusComponent,
     Dashboard1Component,
     Dashboard2Component,
-    ContactComponent
+    ContactComponent,
+    Dashboard3Component
   ],
   imports: [
     BrowserModule,
