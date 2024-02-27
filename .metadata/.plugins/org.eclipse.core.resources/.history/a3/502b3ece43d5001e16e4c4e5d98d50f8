@@ -1,0 +1,33 @@
+package com.chronic.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.chronic.model.Doctor;
+import com.chronic.model.User;
+import com.chronic.service.HomeService;
+
+@RestController
+@RequestMapping("/chronic") 
+@CrossOrigin("*")
+public class HomeController {
+	
+	@Autowired
+	private HomeService service;
+	
+	@PostMapping("/user-signup")
+	public User postUserSign(@RequestBody User user) {
+		
+		return service.userSignup(user);
+	}
+	@PostMapping("/user-signup")
+	public Doctor postDoctorSign(@RequestBody Doctor user) {
+		
+		return service.doctorSignup(user);
+	}
+
+}

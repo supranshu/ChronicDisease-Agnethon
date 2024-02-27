@@ -12,6 +12,8 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long userId;
 	private String username;
+	private String password;
+	private String fullname;
 	private long age;
 	private String gender;
 	private String phoneNo;
@@ -28,6 +30,12 @@ public class User {
 	private long pefr;
 	
 	
+	public String getFullname() {
+		return fullname;
+	}
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
+	}
 	public String getDisease() {
 		return disease;
 	}
@@ -125,12 +133,29 @@ public class User {
 		this.pefr = pefr;
 	}
 	
-	public User(long userId, String username, long age, String gender, String phoneNo, String email, String city,
-			String state, String disease, String country, String height, String weight, long sugar, long hba1c,
-			long bmi, long pefr) {
+	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", fullname=" + fullname
+				+ ", age=" + age + ", gender=" + gender + ", phoneNo=" + phoneNo + ", email=" + email + ", city=" + city
+				+ ", state=" + state + ", disease=" + disease + ", country=" + country + ", height=" + height
+				+ ", weight=" + weight + ", sugar=" + sugar + ", hba1c=" + hba1c + ", bmi=" + bmi + ", pefr=" + pefr
+				+ "]";
+	}
+	public User(long userId, String username, String password, String fullname, long age, String gender, String phoneNo,
+			String email, String city, String state, String disease, String country, String height, String weight,
+			long sugar, long hba1c, long bmi, long pefr) {
 		super();
 		this.userId = userId;
 		this.username = username;
+		this.password = password;
+		this.fullname = fullname;
 		this.age = age;
 		this.gender = gender;
 		this.phoneNo = phoneNo;
@@ -146,23 +171,14 @@ public class User {
 		this.bmi = bmi;
 		this.pefr = pefr;
 	}
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", age=" + age + ", gender=" + gender
-				+ ", phoneNo=" + phoneNo + ", email=" + email + ", city=" + city + ", state=" + state + ", disease="
-				+ disease + ", country=" + country + ", height=" + height + ", weight=" + weight + ", sugar=" + sugar
-				+ ", hba1c=" + hba1c + ", bmi=" + bmi + ", pefr=" + pefr + ", getDisease()=" + getDisease()
-				+ ", getUserId()=" + getUserId() + ", getUsername()=" + getUsername() + ", getAge()=" + getAge()
-				+ ", getGender()=" + getGender() + ", getPhoneNo()=" + getPhoneNo() + ", getEmail()=" + getEmail()
-				+ ", getCity()=" + getCity() + ", getState()=" + getState() + ", getCountry()=" + getCountry()
-				+ ", getHeight()=" + getHeight() + ", getWeight()=" + getWeight() + ", getSugar()=" + getSugar()
-				+ ", getHba1c()=" + getHba1c() + ", getBmi()=" + getBmi() + ", getPefr()=" + getPefr() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
-	}
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
+	
 	
 	
 

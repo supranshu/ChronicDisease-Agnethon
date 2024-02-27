@@ -8,4 +8,5 @@ import com.chronic.model.Doctor;
 @Repository
 public interface DoctorRepo extends JpaRepository<Doctor, Long> {
 
+	Doctor findByEmail(String email);
 }
