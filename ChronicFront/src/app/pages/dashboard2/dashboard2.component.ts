@@ -1,12 +1,38 @@
-import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Component } from '@angular/core';
 
+import { Component } from '@angular/core';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+
+declare module '@google/generative-ai' {
+  interface GoogleGenerativeAI {
+    generate(input: { textInput: string }): Promise<{ generatedText: string }>;
+  }
+}
+const genAI = new GoogleGenerativeAI("AIzaSyBboXOV-pXbZEL3LLkfoISXCvPKbpXjPns");
 @Component({
   selector: 'app-dashboard2',
   templateUrl: './dashboard2.component.html',
-  styleUrl: './dashboard2.component.css'
+  styleUrls: ['./dashboard2.component.css']
 })
 export class Dashboard2Component {
+  
+  // Replace with your actual API key and model parameters
+  apiKey = 'AIzaSyBboXOV-pXbZEL3LLkfoISXCvPKbpXjPns';
+  model = 'gemini-pro';
+  parameters = {
+    safetySettings: 'MEDIUM',
+    temperature: 0.7,
+    top_p: 0.9,
+    top_k: 20,
+    maxOutputTokens: 100
+  };
+
+  // Create a variable to store user input and response
+  userInput = '';
+  response = '';
+  rexp='';
+
+
+
   getCurrentTime(): string {
     const now = new Date();
     let hours = now.getHours();
@@ -22,31 +48,43 @@ export class Dashboard2Component {
     return `${hoursStr}:${minutes} ${meridian}`;
   }
 
-  api_key: string = 'AIzaSyCTSQi9GlqidQ8Vev11U0N-8ztSQrDeuuM'; // Assign your API key here
-  prompt: string = ''; // Initialize with user's prompt
-  response: string = ''; // Store the response from the Gemini bot
+  async sendRequest(): Promise<void> {
+    if (!this.userInput) {
+      return; // Handle empty input scenarios
+    }
 
-  constructor(private http: HttpClient) { }
+    try {
+      const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+  
+    const prompt = this.userInput;
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    this.rexp = text;
+    console.log(text);
+    } catch (error) {
+      console.error('Error sending request to Gemini:', error);
+      // Update response with error message or default text
+      this.response = 'Error: Unable to process your request.';
+    } finally {
+      // Update response even if request fails
+      this.response = 'Sending request...'; // Or provide interim message
+    }
+  }
 
-  getGeminiBotResponse() {
-    const url = 'https://api.gemini.com/v1/bot';
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.api_key}`,
-      'Content-Type': 'application/json'
-    });
-
-    const data = {
-      prompt: this.prompt
-    };
-
-    this.http.post<any>(url, data, { headers }).subscribe(
-      (res) => {
-        this.response = res.response; // Store the response
-      },
-      (error) => {
-        console.error('Error:', error);
-        this.response = 'Error: Unable to get response from Gemini bot'; // Handle error
-      }
-    );
+  async run() {
+    // For text-only input, use the gemini-pro model
+    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+  
+    const prompt = this.userInput;
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    this.rexp = text;
+    console.log(text);
+  }
+  
+  ngOnInit() {
+    this.run();
   }
 }
