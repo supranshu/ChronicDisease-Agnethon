@@ -22,6 +22,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { WeeklyGraphComponent } from './pages/weekly-graph/weekly-graph.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -49,7 +50,7 @@ import { WeeklyGraphComponent } from './pages/weekly-graph/weekly-graph.componen
     AppRoutingModule,
     FormsModule,
     MatSnackBarModule,
-    HttpClientModule,BrowserAnimationsModule, MatDatepickerModule, MatInputModule, MatNativeDateModule
+    HttpClientModule,BrowserAnimationsModule, MatDatepickerModule, MatInputModule, MatNativeDateModule,NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
