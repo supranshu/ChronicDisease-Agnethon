@@ -1,4 +1,4 @@
-<section class="p-4">
+<section class="p-4 weekly-metrics-graph-section">
     <h2 class="text-2xl font-semibold mb-4">Weekly Metrics Graph</h2>
   
     <div *ngIf="weeklyMetricsList.length > 0">
@@ -7,9 +7,7 @@
                 [datasets]="lineChartData"
                 [labels]="lineChartLabels"
                 [options]="lineChartOptions"
-                
                 [legend]="lineChartLegend"
-                
                 [plugins]="lineChartPlugins">
         </canvas>
       </div>
