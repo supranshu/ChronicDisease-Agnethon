@@ -13,7 +13,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LoginComponent } from './pages/login/login.component';
+<<<<<<< HEAD
 import { Dashboard1Component } from './pages/dashboard1/dashboard1.component';
+=======
+import { AboutusComponent } from './aboutus/aboutus.component';
+>>>>>>> 20d302d4abebb844bdfc45a8682ffbc8764a5e76
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import { Dashboard1Component } from './pages/dashboard1/dashboard1.component';
     SignUpComponent,
     KnowMoreComponent,
     LoginComponent,
+<<<<<<< HEAD
     Dashboard1Component
+=======
+    AboutusComponent
+>>>>>>> 20d302d4abebb844bdfc45a8682ffbc8764a5e76
   ],
   imports: [
     BrowserModule,
