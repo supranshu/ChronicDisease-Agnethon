@@ -5,6 +5,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 import { KnowMoreComponent } from './pages/know-more/know-more.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,12 @@ const routes: Routes = [
     path:"login",
     component:LoginComponent,
     pathMatch:'full'
+  },
+  {
+    path:"aboutus",
+    component:AboutusComponent,
+    pathMatch:'full'
+  
   }
 ];
 
