@@ -1,0 +1,5 @@
+package com.chronic.model;
+
+public class WeeklyAnalysis {
+
+}
