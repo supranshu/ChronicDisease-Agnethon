@@ -13,6 +13,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LoginComponent } from './pages/login/login.component';
+import { Dashboard1Component } from './pages/dashboard1/dashboard1.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { LoginComponent } from './pages/login/login.component';
 
     SignUpComponent,
     KnowMoreComponent,
-    LoginComponent
+    LoginComponent,
+    Dashboard1Component
   ],
   imports: [
     BrowserModule,
