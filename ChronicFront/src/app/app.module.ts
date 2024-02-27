@@ -17,6 +17,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { Dashboard3Component } from './pages/dashboard3/dashboard3.component';
 import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
 import { NearestComponent } from './pages/nearest/nearest.component';
+import { WeeklyComponent } from './pages/weekly/weekly.component';
 
 
  
@@ -34,7 +35,8 @@ import { NearestComponent } from './pages/nearest/nearest.component';
     ContactComponent,
     Dashboard3Component,
     DocdashboardComponent,
-    NearestComponent
+    NearestComponent,
+    WeeklyComponent
   ],
   imports: [
     BrowserModule,

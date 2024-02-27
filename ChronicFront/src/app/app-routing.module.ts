@@ -13,6 +13,8 @@ import { Dashboard3Component } from './pages/dashboard3/dashboard3.component';
 import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
 import { NearestComponent } from './pages/nearest/nearest.component';
 
+import { WeeklyComponent } from './pages/weekly/weekly.component';
+
 
 const routes: Routes = [
   {
@@ -69,6 +71,11 @@ const routes: Routes = [
   {
     path:"nearest",
     component:NearestComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'weekly',
+    component:WeeklyComponent,
     pathMatch:'full'
   }
 ];

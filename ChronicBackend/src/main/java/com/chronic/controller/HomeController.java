@@ -53,7 +53,7 @@ public class HomeController {
 	}
 	
 	@GetMapping("/weekly/{username}")
-	public WeeklyAnalysis getWeeklyAnalysis(@PathVariable("username")String username) {
+	public List<WeeklyAnalysis> getWeeklyAnalysis(@PathVariable("username")String username) {
 		return service.analysisOfUser(username);
 	}
 	
