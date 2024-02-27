@@ -12,6 +12,8 @@ public class Doctor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long doctorId;
+	private String docName;
+	private String password;
 	private String clinicName;
 	private String phoneNo;
 	private String speciality;
@@ -20,6 +22,21 @@ public class Doctor {
 	private String state;
 	private String country;
 	private String certification;
+	
+	
+	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getDocName() {
+		return docName;
+	}
+	public void setDocName(String docName) {
+		this.docName = docName;
+	}
 	public long getDoctorId() {
 		return doctorId;
 	}
@@ -76,14 +93,16 @@ public class Doctor {
 	}
 	@Override
 	public String toString() {
-		return "Doctor [doctorId=" + doctorId + ", clinicName=" + clinicName + ", phoneNo=" + phoneNo + ", speciality="
-				+ speciality + ", email=" + email + ", city=" + city + ", state=" + state + ", country=" + country
-				+ ", certification=" + certification + "]";
+		return "Doctor [doctorId=" + doctorId + ", docName=" + docName + ", password=" + password + ", clinicName="
+				+ clinicName + ", phoneNo=" + phoneNo + ", speciality=" + speciality + ", email=" + email + ", city="
+				+ city + ", state=" + state + ", country=" + country + ", certification=" + certification + "]";
 	}
-	public Doctor(long doctorId, String clinicName, String phoneNo, String speciality, String email, String city,
-			String state, String country, String certification) {
+	public Doctor(long doctorId, String docName, String password, String clinicName, String phoneNo, String speciality,
+			String email, String city, String state, String country, String certification) {
 		super();
 		this.doctorId = doctorId;
+		this.docName = docName;
+		this.password = password;
 		this.clinicName = clinicName;
 		this.phoneNo = phoneNo;
 		this.speciality = speciality;
@@ -97,6 +116,11 @@ public class Doctor {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
+	
+	
 	
 	
 	

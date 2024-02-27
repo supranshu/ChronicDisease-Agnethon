@@ -14,7 +14,8 @@ public class WeeklyAnalysis {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String username;
-	private String sugar;
+	private long fastingSugar;
+	private long postEatingSugar;
 	private long hba1c;
 	private long bmi;
 	private long pefr;
@@ -31,11 +32,18 @@ public class WeeklyAnalysis {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getSugar() {
-		return sugar;
+	
+	public long getFastingSugar() {
+		return fastingSugar;
 	}
-	public void setSugar(String sugar) {
-		this.sugar = sugar;
+	public void setFastingSugar(long fastingSugar) {
+		this.fastingSugar = fastingSugar;
+	}
+	public long getPostEatingSugar() {
+		return postEatingSugar;
+	}
+	public void setPostEatingSugar(long postEatingSugar) {
+		this.postEatingSugar = postEatingSugar;
 	}
 	public long getHba1c() {
 		return hba1c;
@@ -61,20 +69,25 @@ public class WeeklyAnalysis {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	@Override
-	public String toString() {
-		return "WeeklyAnalysis [id=" + id + ", username=" + username + ", sugar=" + sugar + ", hba1c=" + hba1c
-				+ ", bmi=" + bmi + ", pefr=" + pefr + ", date=" + date + "]";
-	}
-	public WeeklyAnalysis(long id, String username, String sugar, long hba1c, long bmi, long pefr, Date date) {
+	
+	
+	public WeeklyAnalysis(long id, String username, long fastingSugar, long postEatingSugar, long hba1c, long bmi,
+			long pefr, Date date) {
 		super();
 		this.id = id;
 		this.username = username;
-		this.sugar = sugar;
+		this.fastingSugar = fastingSugar;
+		this.postEatingSugar = postEatingSugar;
 		this.hba1c = hba1c;
 		this.bmi = bmi;
 		this.pefr = pefr;
 		this.date = date;
+	}
+	@Override
+	public String toString() {
+		return "WeeklyAnalysis [id=" + id + ", username=" + username + ", fastingSugar=" + fastingSugar
+				+ ", postEatingSugar=" + postEatingSugar + ", hba1c=" + hba1c + ", bmi=" + bmi + ", pefr=" + pefr
+				+ ", date=" + date + "]";
 	}
 	public WeeklyAnalysis() {
 		super();

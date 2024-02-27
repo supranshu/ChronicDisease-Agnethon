@@ -1,0 +1,39 @@
+package com.chronic.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.chronic.model.Doctor;
+import com.chronic.model.User;
+import com.chronic.repo.DoctorRepo;
+import com.chronic.repo.UserRepo;
+import com.chronic.repo.WeeklyAnalysisRepo;
+
+@Service
+public class HomeService {
+    private final BCryptPasswordEncoder encoder;
+    private final DoctorRepo doctorRepo;
+    private final UserRepo userRepo;
+    private final WeeklyAnalysisRepo analysisRepo;
+
+    @Autowired
+    public HomeService(BCryptPasswordEncoder encoder, DoctorRepo doctorRepo, UserRepo userRepo, WeeklyAnalysisRepo analysisRepo) {
+        this.encoder = encoder;
+        this.doctorRepo = doctorRepo;
+        this.userRepo = userRepo;
+        this.analysisRepo = analysisRepo;
+    } 
+
+    public User userSignup(User user) {
+        String encodedPassword = encoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        System.out.println(user.getPassword());
+        return userRepo.save(user);
+    }
+    public Doctor doctorSignup(Doctor user) {
+        String encodedPassword = encoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        System.out.println(user.getPassword());
+        return doctorRepo.save(user);
+    }
+}
