@@ -14,6 +14,7 @@ import { DocdashboardComponent } from './pages/docdashboard/docdashboard.compone
 import { NearestComponent } from './pages/nearest/nearest.component';
 
 import { WeeklyComponent } from './pages/weekly/weekly.component';
+import { WeeklyGraphComponent } from './pages/weekly-graph/weekly-graph.component';
 
 
 const routes: Routes = [
@@ -76,6 +77,11 @@ const routes: Routes = [
   {
     path:'weekly',
     component:WeeklyComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'weekupdate',
+    component:WeeklyGraphComponent,
     pathMatch:'full'
   }
 ];
