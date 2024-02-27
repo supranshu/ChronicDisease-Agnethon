@@ -1,0 +1,33 @@
+/* User Card */
+.user-card {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .user-card .p-6 {
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-card h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 16px;
+  }
+  
+  .user-card .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  
+  .user-card p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
