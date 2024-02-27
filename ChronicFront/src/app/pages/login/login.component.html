@@ -32,8 +32,8 @@
     <form  class="form">
       <input required="" [(ngModel)]="loginData.email" class="input" type="email" name="email" id="email" placeholder="E-mail">
       <input required="" [(ngModel)]="loginData.password" class="input" type="password" name="password" id="password" placeholder="Password">
-      <span class="forgot-password">Don't have an account?<a routerLink="/sign-up" class="forgot-password" style="font-size: 16px;">Sign-Up</a></span>
-      <button class="login-button" type="submit" (click)="doLoginU()" value="Log In as User">Log In as User</button>
-      <button class="login-button" type="submit" (click)="doLoginD()" value="Log In as Doctor">Log In as Doctor</button>
+      <span class="forgot-password">Don't have an account?<a routerLink="/signup" class="forgot-password" style="font-size: 16px; margin-left:-2px;">Sign-Up</a></span>
+      <button class="login-button" type="submit" (click)="doLoginU()" value="Log In as User" >Log In as User</button>
+      <button class="login-button" type="submit" (click)="doLoginD()" value="Log In as Doctor" style="margin-left: 0.5px;">Log In as Doctor</button>
     </form>
 </div>
