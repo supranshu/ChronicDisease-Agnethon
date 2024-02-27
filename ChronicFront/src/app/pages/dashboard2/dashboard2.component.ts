@@ -30,8 +30,16 @@ export class Dashboard2Component {
   userInput = '';
   response = '';
   rexp='';
-
-
+  
+  name = localStorage.getItem('username');
+  disease = localStorage.getItem('disease');
+  diabetesSugarLevel = localStorage.getItem('diabetesSugarLevel');
+  diabetesHbA1c = localStorage.getItem('diabetesHbA1c');
+  height =  localStorage.getItem('height');
+  weight =  localStorage.getItem('weight');
+  asthmaPefr = localStorage.getItem('asthmaPefr');
+  hypertensionBloodPressure = localStorage.getItem('hypertensionBloodPressure');
+  chatCommand = '';
 
   getCurrentTime(): string {
     const now = new Date();
@@ -54,9 +62,17 @@ export class Dashboard2Component {
     }
 
     try {
+
+      if (this.disease === 'diabetes') {
+        this.chatCommand = `${this.name} Patient has diabetes. Sugar level: ${this.diabetesSugarLevel}, HbA1c: ${this.diabetesHbA1c}. Height: ${this.height}, Weight: ${this.weight}. what precautions need to be taken? give info in bullet points in english`;
+      } else if (this.disease === 'hypertension') {
+        this.chatCommand = `${this.name} Patient has hypertension. Blood pressure: ${this.hypertensionBloodPressure}. Height: ${this.height}, Weight: ${this.weight}. what precautions need to be taken? give info in bullet points in english`;
+      } else if (this.disease === 'asthma') {
+        this.chatCommand = `${this.name} Patient has asthma. PEFR: ${this.asthmaPefr}. Height: ${this.height}, Weight: ${this.weight}. what precautions need to be taken? give info in bullet points in english`;
+      }
       const model = genAI.getGenerativeModel({ model: "gemini-pro"});
   
-    const prompt = this.userInput;
+    const prompt = this.chatCommand;
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
