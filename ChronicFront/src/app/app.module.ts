@@ -14,6 +14,10 @@ import { FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LoginComponent } from './pages/login/login.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { Dashboard1Component } from './pages/dashboard1/dashboard1.component';
+
+
+
 
 
 
@@ -25,7 +29,8 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     SignUpComponent,
     KnowMoreComponent,
     LoginComponent,
-    AboutusComponent
+    AboutusComponent,
+    Dashboard1Component
   ],
   imports: [
     BrowserModule,

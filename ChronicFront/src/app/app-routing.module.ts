@@ -6,6 +6,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { KnowMoreComponent } from './pages/know-more/know-more.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { Dashboard1Component } from './pages/dashboard1/dashboard1.component';
+
 
 const routes: Routes = [
   {
@@ -33,6 +35,11 @@ const routes: Routes = [
     component:AboutusComponent,
     pathMatch:'full'
   
+  },
+  {
+    path:"dashboard1",
+    component:Dashboard1Component,
+    pathMatch:'full'
   }
 ];
 
