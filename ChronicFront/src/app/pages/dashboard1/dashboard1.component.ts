@@ -89,7 +89,7 @@ export class Dashboard1Component {
       (response)=>{
         console.log(response)
         this.snack.open("Disease Info updated!!!",'', {duration:3000})
-        this.router.navigateByUrl("/dashbaord2")
+        this.router.navigateByUrl("/dashboard2")
       },
       (error)=>{
         console.log(error)
