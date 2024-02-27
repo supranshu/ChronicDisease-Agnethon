@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import baseUrl from '../../services/helper';
@@ -8,7 +8,12 @@ import baseUrl from '../../services/helper';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
+
+  ngOnInit(): void {
+    localStorage.clear();
+  }
+
   selectedRole: string = 'User'; // Default value
   formData: any = {}; // Object to hold form data
 
