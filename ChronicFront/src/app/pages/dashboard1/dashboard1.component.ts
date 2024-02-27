@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import baseUrl from '../../services/helper';
-import { error } from 'console';
+
 
 @Component({
   selector: 'app-dashboard1',
@@ -89,6 +89,7 @@ export class Dashboard1Component {
       (response)=>{
         console.log(response)
         this.snack.open("Disease Info updated!!!",'', {duration:3000})
+        this.router.navigateByUrl("/dashboard2")
       },
       (error)=>{
         console.log(error)

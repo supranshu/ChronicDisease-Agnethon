@@ -1,16 +1,17 @@
-
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-
-const genAI = new GoogleGenerativeAI("AIzaSyBboXOV-pXbZEL3LLkfoISXCvPKbpXjPns");
+const genAI = new GoogleGenerativeAI('AIzaSyBboXOV-pXbZEL3LLkfoISXCvPKbpXjPns');
 @Component({
   selector: 'app-dashboard2',
   templateUrl: './dashboard2.component.html',
-  styleUrls: ['./dashboard2.component.css']
+  styleUrls: ['./dashboard2.component.css'],
 })
-export class Dashboard2Component {
-  
+export class Dashboard2Component implements OnInit{
+
+  ngOnInit() {
+    this.sendRequest();
+  }
   // Replace with your actual API key and model parameters
   apiKey = 'AIzaSyBboXOV-pXbZEL3LLkfoISXCvPKbpXjPns';
   model = 'gemini-pro';
@@ -19,15 +20,23 @@ export class Dashboard2Component {
     temperature: 0.7,
     top_p: 0.9,
     top_k: 20,
-    maxOutputTokens: 100
+    maxOutputTokens: 100,
   };
 
   // Create a variable to store user input and response
   userInput = '';
   response = '';
-  rexp='';
+  rexp = '';
 
-
+  name = localStorage.getItem('username');
+  disease = localStorage.getItem('disease');
+  diabetesSugarLevel = localStorage.getItem('diabetesSugarLevel');
+  diabetesHbA1c = localStorage.getItem('diabetesHbA1c');
+  height = localStorage.getItem('height');
+  weight = localStorage.getItem('weight');
+  asthmaPefr = localStorage.getItem('asthmaPefr');
+  hypertensionBloodPressure = localStorage.getItem('hypertensionBloodPressure');
+  chatCommand = '';
 
   getCurrentTime(): string {
     const now = new Date();
@@ -44,20 +53,28 @@ export class Dashboard2Component {
     return `${hoursStr}:${minutes} ${meridian}`;
   }
 
-  async sendRequest(): Promise<void> {
-    if (!this.userInput) {
+  async sendRequest(): Promise<void> 
+  { console.log(this.name);
+    if (!this.chatCommand) {
       return; // Handle empty input scenarios
     }
 
     try {
-      const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-  
-    const prompt = this.userInput;
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
-    this.rexp = text;
-    console.log(text);
+      if (this.disease === 'diabetes') {
+        this.chatCommand = `${this.name} Patient has diabetes. Sugar level: ${this.diabetesSugarLevel}, HbA1c: ${this.diabetesHbA1c}. Height: ${this.height}, Weight: ${this.weight}. what precautions need to be taken? give info in bullet points in english`;
+      } else if (this.disease === 'hypertension') {
+        this.chatCommand = `${this.name} Patient has hypertension. Blood pressure: ${this.hypertensionBloodPressure}. Height: ${this.height}, Weight: ${this.weight}. what precautions need to be taken? give info in bullet points in english`;
+      } else if (this.disease === 'asthma') {
+        this.chatCommand = `${this.name} Patient has asthma. PEFR: ${this.asthmaPefr}. Height: ${this.height}, Weight: ${this.weight}. what precautions need to be taken? give info in bullet points in english`;
+      }
+      const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+
+      const prompt = this.chatCommand;
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+      this.rexp = text;
+      console.log(text);
     } catch (error) {
       console.error('Error sending request to Gemini:', error);
       // Update response with error message or default text
@@ -68,19 +85,5 @@ export class Dashboard2Component {
     }
   }
 
-  async run() {
-    // For text-only input, use the gemini-pro model
-    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
   
-    const prompt = this.userInput;
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
-    this.rexp = text;
-    console.log(text);
-  }
-  
-  ngOnInit() {
-    this.run();
-  }
 }
