@@ -16,6 +16,7 @@ import { Dashboard2Component } from './pages/dashboard2/dashboard2.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { Dashboard3Component } from './pages/dashboard3/dashboard3.component';
 import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
+import { NearestComponent } from './pages/nearest/nearest.component';
 
 
  
@@ -32,7 +33,8 @@ import { DocdashboardComponent } from './pages/docdashboard/docdashboard.compone
     Dashboard2Component,
     ContactComponent,
     Dashboard3Component,
-    DocdashboardComponent
+    DocdashboardComponent,
+    NearestComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { Dashboard2Component } from './pages/dashboard2/dashboard2.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { Dashboard3Component } from './pages/dashboard3/dashboard3.component';
 import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
+import { NearestComponent } from './pages/nearest/nearest.component';
 
 
 const routes: Routes = [
@@ -63,6 +64,11 @@ const routes: Routes = [
   {
     path:'docdashboard',
     component:DocdashboardComponent,
+    pathMatch:'full'
+  },
+  {
+    path:"nearest",
+    component:NearestComponent,
     pathMatch:'full'
   }
 ];
