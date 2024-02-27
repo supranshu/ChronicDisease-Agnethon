@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-<nav class="bg-white border-gray-200 dark:bg-gray-900" style="position: sticky;">
-=======
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
->>>>>>> 2a24d6c47ef5e9dd519e444cdfa7c3356df77f6c
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="/assets/logo_white.gif" class="h-20" alt="Flowbite Logo" />
@@ -31,12 +27,12 @@
   
 <div class="container" style="margin-top: 320px;">
   <div class="heading">Sign Up</div>
-  <form action="" class="form" id="signupForm">
+  <form (submit)="onSubmit()" class="form" id="signupForm">
       <div class="role-selection">
           <label for="role">Select your role:</label>
           <br>
           <div class="custom-dropdown" style="width: 267px;">
-              <select id="role" name="role" class="input" (change)="showFields($event)">
+              <select id="role" name="role" class="input" [(ngModel)]="selectedRole" (change)="showFields($event)">
                   <option value="User" selected>User</option>
                   <option value="Doctor">Doctor</option>
               </select>
@@ -46,37 +42,17 @@
       <!-- User form fields -->
       <div id="userFields" [style.display]="selectedRole === 'User' ? 'block' : 'none'">
           
-          <input required="" class="input" type="text" name="firstName" placeholder="First Name">
-          <input required="" class="input" type="text" name="lastName" placeholder="Last Name">
-<<<<<<< HEAD
-            <input required="" class="input" type="text" name="phone" placeholder="Phone">
-            <input required="" class="input" type="text" name="address" placeholder="Address">
-            <input required="" class="input" type="text" name="address" placeholder="Address">
-            <input required="" class="input" type="text" name="address" placeholder="Address">
-            <input required="" class="input" type="text" name="address" placeholder="Address">
-            <input required="" class="input" type="text" name="address" placeholder="Address">
-
-
-
-  
+          <input required class="input" type="text" name="fullname" placeholder="Full name" [(ngModel)]="formData.fullname">
           
-          <!-- Add radio buttons for gender selection -->
-          <!-- <div>
-              <label>Gender:</label>
-=======
-          <input required="" class="input" type="text" name="username" placeholder="Username">
-          <input required="" class="input" type="password" name="password" placeholder="Password">
-          <input required="" class="input" type="text" name="phone" placeholder="Phone">
-          <input required="" class="input" type="text" name="email" placeholder="E-mail"> 
-          <input required="" class="input" type="text" name="age" placeholder="Age">
-          <!-- <label>Gender:</label>
->>>>>>> 2a24d6c47ef5e9dd519e444cdfa7c3356df77f6c
-              <label><input type="radio" name="gender" value="male"> Male</label>
-              <label><input type="radio" name="gender" value="female"> Female</label> -->
+          <input required class="input" type="text" name="username" placeholder="Username" [(ngModel)]="formData.username">
+          <input required class="input" type="password" name="password" placeholder="Password" [(ngModel)]="formData.password">
+          <input required class="input" type="text" name="phone" placeholder="Phone" [(ngModel)]="formData.phone">
+          <input required class="input" type="text" name="email" placeholder="E-mail" [(ngModel)]="formData.email"> 
+          <input required class="input" type="text" name="age" placeholder="Age" [(ngModel)]="formData.age">
               
-          <input required="" class="input" type="text" name="country" placeholder="Country">
-          <input required="" class="input" type="text" name="state" placeholder="State">
-          <input required="" class="input" type="password" name="city" placeholder="City">
+          <input required="" class="input" type="text" name="country" placeholder="Country" [(ngModel)]="formData.country">
+          <input required="" class="input" type="text" name="state" placeholder="State" [(ngModel)]="formData.state">
+          <input required="" class="input" type="text" name="city" placeholder="City" [(ngModel)]="formData.city">
 
       </div>
 
@@ -102,25 +78,25 @@
       
       <!-- Doctor form fields -->
       <div id="doctorFields" [style.display]="selectedRole === 'Doctor' ? 'block' : 'none'">
-          <input required="" class="input" type="text" name="name" placeholder="Name"> 
-          <input required="" class="input" type="email" name="email" placeholder="Email">
-          <input required="" class="input" type="password" name="password" placeholder="Password">
-          <input required="" class="input" type="text" name="specialization" placeholder="Specialization">
-          <input required="" class="input" type="text" name="phone" placeholder="Phone">
-          <input required="" class="input" type="text" name="hospital" placeholder="Hospital/Clinic Name">
-          <input required="" class="input" type="text" name="country" placeholder="Country">
-          <input required="" class="input" type="text" name="state" placeholder="State">
-          <input required="" class="input" type="password" name="city" placeholder="City">
+          <input required="" class="input" type="text" name="name" placeholder="Name" [(ngModel)]="formData.name"> 
+          <input required="" class="input" type="email" name="email" placeholder="Email" [(ngModel)]="formData.email">
+          <input required="" class="input" type="password" name="password" placeholder="Password" [(ngModel)]="formData.password">
+          <input required="" class="input" type="text" name="specialization" placeholder="Specialization" [(ngModel)]="formData.specialization">
+          <input required="" class="input" type="text" name="phone" placeholder="Phone" [(ngModel)]="formData.phone">
+          <input required="" class="input" type="text" name="hospital" placeholder="Hospital/Clinic Name" [(ngModel)]="formData.hospital">
+          <input required="" class="input" type="text" name="country" placeholder="Country" [(ngModel)]="formData.country">
+          <input required="" class="input" type="text" name="state" placeholder="State" [(ngModel)]="formData.state">
+          <input required="" class="input" type="text" name="city" placeholder="City" [(ngModel)]="formData.city">
       </div>
-<<<<<<< HEAD
+
       
      
-      <input required="" class="input" type="email" name="email" placeholder="E-mail">
-      <input required="" class="input" type="password" name="password" placeholder="Password">
+      
+
       <span class="forgot-password">Already Have Account? <a routerLink="/login">  Login</a></span>
       <input class="login-button" type="submit" value="Sign Up">
-=======
-    <input class="login-button" type="submit" value="Sign Up">
->>>>>>> 2a24d6c47ef5e9dd519e444cdfa7c3356df77f6c
+
+    
+
   </form>
 </div>
