@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard1',
-  templateUrl: './dashboard1.component.html',
-  styleUrl: './dashboard1.component.css'
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class Dashboard1Component {
+export class LoginComponent {
 
+  
 }
