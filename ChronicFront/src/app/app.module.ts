@@ -15,6 +15,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LoginComponent } from './pages/login/login.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { Dashboard1Component } from './pages/dashboard1/dashboard1.component';
+import { Dashboard2Component } from './pages/dashboard2/dashboard2.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 
@@ -30,7 +32,9 @@ import { Dashboard1Component } from './pages/dashboard1/dashboard1.component';
     KnowMoreComponent,
     LoginComponent,
     AboutusComponent,
-    Dashboard1Component
+    Dashboard1Component,
+    Dashboard2Component,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
