@@ -5,13 +5,17 @@
     border-radius: 40px;
     padding: 25px 35px;
     border: 5px solid rgb(255, 255, 255);
-    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px, 
+    rgba(133, 189, 215, 0.8784313725) 0px -30px 30px -20px, 
+    rgba(133, 189, 215, 0.8784313725) 30px 0px 30px -20px, 
+    rgba(133, 189, 215, 0.8784313725) -30px 0px 30px -20px;
     margin: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
 
 .heading {
     text-align: center;
@@ -61,8 +65,8 @@
   }
   
   .form .login-button {
-    display: block;
-    width: 100%;
+    display: flex;
+    width: 50%;
     font-weight: bold;
     background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
     color: white;
@@ -72,6 +76,8 @@
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
     border: none;
     transition: all 0.2s ease-in-out;
+    text-align: center;
+    padding: 5px;
   }
   
   .form .login-button:hover {
