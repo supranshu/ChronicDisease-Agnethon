@@ -9,7 +9,7 @@ import baseUrl from '../../services/helper';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-
+ 
   ngOnInit(): void {
     localStorage.clear();
   }
