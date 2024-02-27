@@ -57,28 +57,14 @@
    </svg>
  </button>
 
- <aside id="default-sidebar"
-   class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
-   aria-label="Sidebar">
-   <div class="h-full bg-gray-800 shadow-xl dark:bg-gray-900">
+ <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-white" aria-label="Sidebar">
+   <div class="h-full shadow-xl dark:bg-gray-900">
      <div class="flex items-center justify-between p-4 border-b dark:border-gray-700">
-       <a href="#" aria-label="Flowbite" title="Flowbite" class="inline-flex items-center space-x-2">
-         <img src="/assets/logo_white.gif" class="h-8" alt="Flowbite Logo" />
-         
-       </a>
-       <button data-drawer-toggle="default-sidebar"
-         class="text-gray-400 hover:text-gray-200 dark:text-gray-300 focus:outline-none focus:text-gray-200 dark:focus:text-gray-200">
-         <span class="sr-only">Close sidebar</span>
-         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-           xmlns="http://www.w3.org/2000/svg">
-           <path fill-rule="evenodd"
-             d="M13.5 6.5a.75.75 0 011.5 0v7a.75.75 0 01-1.5 0v-7zM5.793 8.75a.75.75 0 01-1.06-1.06l3.5-3.5a.75.75 0 111.06 1.06l-3.5 3.5z"
-             clip-rule="evenodd"></path>
-         </svg>
-       </button>
+       <!-- Remove the Flowbite logo and name -->
+       <!-- Remove the light and dark mode button -->
      </div>
      <nav class="overflow-y-auto">
-       <ul class="p-2 space-y-2 text-sm">
+       <ul class="p-2 space-y-2 text-sm text-black">
          <li>
            <a routerLink="/dashboard3" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">User Dashboard</a>
          </li>
@@ -89,13 +75,14 @@
            <a href="#" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Weekly Data Metrics Graphs</a>
          </li>
          <li>
-           <a routerLink="/nearest" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Contact Nearest Doctor</a>
+           <a href="#" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Contact Nearest Doctor</a>
          </li>
        </ul>
      </nav>
    </div>
  </aside>
-
+ 
+ 
  <div class="p-4 sm:ml-64">
    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
      <!-- Your existing content goes here -->
