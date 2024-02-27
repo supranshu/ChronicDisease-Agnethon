@@ -61,9 +61,9 @@ public class HomeService {
 		return analysisRepo.save(analysis);
 	}
     
-    public WeeklyAnalysis analysisOfUser(String username) {
-    	WeeklyAnalysis report=analysisRepo.findByUsername(username);
-    	return report;
+    public List<WeeklyAnalysis> analysisOfUser(String username) {
+    	List<WeeklyAnalysis> findByUsername = analysisRepo.findByUsername(username);
+    	return findByUsername;
     }
     
     public User disease(User user) {

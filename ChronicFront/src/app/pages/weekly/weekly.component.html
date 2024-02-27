@@ -1,0 +1,81 @@
+<section class="weekly-metrics-section p-4">
+    <h2 class="text-2xl font-semibold mb-4">Weekly Metrics Input</h2>
+  
+    <form (submit)="submitWeeklyMetrics()" class="form-container">
+      <div class="mb-4">
+        <label for="fastingSugar" class="block text-gray-600">Fasting Sugar Level:</label>
+        <input type="number" id="fastingSugar" name="fastingSugar" class="form-input" [(ngModel)]="fastingSugar" required>
+      </div>
+  
+      <div class="mb-4">
+        <label for="postEatingSugar" class="block text-gray-600">Post-Eating Sugar Level:</label>
+        <input type="number" id="postEatingSugar" name="postEatingSugar" class="form-input" [(ngModel)]="postEatingSugar" required>
+      </div>
+  
+      <div class="mb-4">
+        <label for="hba1c" class="block text-gray-600">HbA1c Level:</label>
+        <input type="number" id="hba1c" name="hba1c" class="form-input" [(ngModel)]="hba1c" required>
+      </div>
+  
+      <div class="mb-4">
+        <label for="bmi" class="block text-gray-600">BMI:</label>
+        <input type="number" id="bmi" name="bmi" class="form-input" [(ngModel)]="bmi" required>
+      </div>
+  
+      <div class="mb-4">
+        <label for="pefr" class="block text-gray-600">PEFR:</label>
+        <input type="number" id="pefr" name="pefr" class="form-input" [(ngModel)]="pefr" required>
+      </div>
+
+      <div class="mb-4">
+        <label for="date" class="block text-gray-600">Date:</label>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="date" name="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+      
+  
+      <button type="submit" class="submit-button bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button>
+    </form>
+    <section class="fetched-weekly-metrics-section p-4">
+        <h2 class="text-2xl font-semibold mb-4">Fetched Weekly Metrics</h2>
+        <div *ngIf="weeklyMetricsList.length > 0">
+          <div *ngFor="let metric of weeklyMetricsList" class="metrics-card">
+            <p>Date: {{ metric.date | date: 'yyyy-MM-dd' }}</p>
+            <p>Fasting Sugar Level: {{ metric.fastingSugar }}</p>
+            <p>Post-Eating Sugar Level: {{ metric.postEatingSugar }}</p>
+            <p>HbA1c Level: {{ metric.hba1c }}</p>
+            <p>BMI: {{ metric.bmi }}</p>
+            <p>PEFR: {{ metric.pefr }}</p>
+          </div>
+        </div>
+        <div *ngIf="weeklyMetricsList.length === 0">
+          <p>No weekly metrics found.</p>
+        </div>
+      </section>
+      
+
+
+      <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-white" aria-label="Sidebar">
+        <nav class="h-full shadow-xl dark:bg-gray-900">
+          <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse" style="margin-top: 10px;margin-left: 20px">
+            <img src="/assets/logo_white.gif" class="h-20" alt="Flowbite Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Vital Sync</span>
+          </a>
+          <ul class="p-2 space-y-2 text-sm text-black" style="margin-top: 100px;">
+            <li>
+              <a routerLink="/dashboard3" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200 text-black">User Dashboard</a>
+            </li>
+            <li>
+              <a routerLink="/weekly" class="block p-2 transition-colors rounded-md bg-blue-800 hover:bg-blue-800 text-white">Weekly Data Input</a>
+            </li>
+            <li>
+              <a routerLink="/weekupdate" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Weekly Data Metrics Graphs</a>
+            </li>
+            <li>
+              <a routerLink="/nearest" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200 text-black">Contact Nearest Doctor</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
