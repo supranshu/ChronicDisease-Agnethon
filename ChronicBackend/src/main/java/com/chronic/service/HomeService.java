@@ -106,5 +106,10 @@ public class HomeService {
         return null;
     }
 
+	public List<User> allUsers() {
+		// TODO Auto-generated method stub
+		return userRepo.findAll();
+	}
+
 	
 }

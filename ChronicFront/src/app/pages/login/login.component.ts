@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
       (response) => {
         console.log(response)
         this.snack.open("Login successful!!!", '', { duration: 3000 })
+        this.router.navigateByUrl("/docdashboard")
       },
       (error) => {
         console.log(error)

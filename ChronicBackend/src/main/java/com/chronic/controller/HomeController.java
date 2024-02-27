@@ -71,5 +71,10 @@ public class HomeController {
 		
 	}
 	
+	@GetMapping("/all-users")
+	public List<User> getAllUsers(){
+		return service.allUsers();
+	}
+	
 
 }
