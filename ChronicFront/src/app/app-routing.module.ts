@@ -25,7 +25,7 @@ const routes: Routes = [
     path:"knowmore",
     component:KnowMoreComponent,
     pathMatch:'full'
-  }
+  },
 ];
 
 @NgModule({
