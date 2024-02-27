@@ -24,20 +24,12 @@ public class User {
 	private String country;
 	private String height;
 	private String weight;
-	private long bloodPressure;
 	private long sugar;
 	private long hba1c;
 	private long bmi;
 	private long pefr;
 	
 	
-	
-	public long getBloodPressure() {
-		return bloodPressure;
-	}
-	public void setBloodPressure(long bloodPressure) {
-		this.bloodPressure = bloodPressure;
-	}
 	public String getFullname() {
 		return fullname;
 	}
@@ -153,12 +145,12 @@ public class User {
 		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", fullname=" + fullname
 				+ ", age=" + age + ", gender=" + gender + ", phoneNo=" + phoneNo + ", email=" + email + ", city=" + city
 				+ ", state=" + state + ", disease=" + disease + ", country=" + country + ", height=" + height
-				+ ", weight=" + weight + ", bloodPressure=" + bloodPressure + ", sugar=" + sugar + ", hba1c=" + hba1c
-				+ ", bmi=" + bmi + ", pefr=" + pefr + "]";
+				+ ", weight=" + weight + ", sugar=" + sugar + ", hba1c=" + hba1c + ", bmi=" + bmi + ", pefr=" + pefr
+				+ "]";
 	}
 	public User(long userId, String username, String password, String fullname, long age, String gender, String phoneNo,
 			String email, String city, String state, String disease, String country, String height, String weight,
-			long bloodPressure, long sugar, long hba1c, long bmi, long pefr) {
+			long sugar, long hba1c, long bmi, long pefr) {
 		super();
 		this.userId = userId;
 		this.username = username;
@@ -174,7 +166,6 @@ public class User {
 		this.country = country;
 		this.height = height;
 		this.weight = weight;
-		this.bloodPressure = bloodPressure;
 		this.sugar = sugar;
 		this.hba1c = hba1c;
 		this.bmi = bmi;

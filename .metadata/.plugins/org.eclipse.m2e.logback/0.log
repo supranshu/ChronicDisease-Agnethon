@@ -281,3 +281,5 @@ Caused by: java.lang.Exception: File not found: C:\Users\ss445\OneDrive\Desktop\
 2024-02-27 14:57:43,997 [Worker-109: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2024-02-27 14:57:44,001 [Worker-109: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ss445\OneDrive\Desktop\Avalon\ChronicBackend\src\test\resources
 2024-02-27 15:26:31,166 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-02-27 17:54:49,317 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-02-27 17:54:49,627 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
