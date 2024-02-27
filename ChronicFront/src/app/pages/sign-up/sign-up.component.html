@@ -77,12 +77,12 @@
       
       <!-- Doctor form fields -->
       <div id="doctorFields" [style.display]="selectedRole === 'Doctor' ? 'block' : 'none'">
-          <input required="" class="input" type="text" name="name" placeholder="Name" [(ngModel)]="formData.name"> 
+          <input required="" class="input" type="text" name="name" placeholder="Name" [(ngModel)]="formData.docName"> 
           <input required="" class="input" type="email" name="email" placeholder="Email" [(ngModel)]="formData.email">
           <input required="" class="input" type="password" name="password" placeholder="Password" [(ngModel)]="formData.password">
-          <input required="" class="input" type="text" name="specialization" placeholder="Specialization" [(ngModel)]="formData.specialization">
+          <input required="" class="input" type="text" name="specialization" placeholder="Specialization" [(ngModel)]="formData.speciality">
           <input required="" class="input" type="text" name="phone" placeholder="Phone" [(ngModel)]="formData.phone">
-          <input required="" class="input" type="text" name="hospital" placeholder="Hospital/Clinic Name" [(ngModel)]="formData.hospital">
+          <input required="" class="input" type="text" name="hospital" placeholder="Hospital/Clinic Name" [(ngModel)]="formData.clinicName">
           <input required="" class="input" type="text" name="country" placeholder="Country" [(ngModel)]="formData.country">
           <input required="" class="input" type="text" name="state" placeholder="State" [(ngModel)]="formData.state">
           <input required="" class="input" type="text" name="city" placeholder="City" [(ngModel)]="formData.city">

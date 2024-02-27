@@ -1,0 +1,39 @@
+/* Center the doctor information section */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Style the doctor card */
+  .doctor-card {
+    width: 300px; /* Adjust width as needed */
+    padding: 20px;
+    border: 2px solid #e5e7eb; /* Adjust border color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+    background-color: #ffffff;
+    text-align: left;
+  }
+  
+  /* Style the doctor name */
+  .doctor-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the doctor details */
+  .doctor-card p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Loading and error messages */
+  .text-red-500,
+  .text-center {
+    margin-top: 20px;
+  }
+  
