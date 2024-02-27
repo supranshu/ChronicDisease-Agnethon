@@ -1,1 +1,45 @@
-<p>sign-up works!</p>
+<div class="container">
+  <div class="heading">Sign Up</div>
+  <form action="" class="form" id="signupForm">
+      <div class="role-selection">
+          <label for="role">Select your role:</label>
+          <div class="custom-dropdown">
+              <select id="role" name="role" class="input" (change)="showFields($event)">
+                  <option value="User" selected>User</option>
+                  <option value="Doctor">Doctor</option>
+                  <option value="Lab">Lab</option>
+              </select>
+          </div>
+      </div>
+    
+      <!-- User form fields -->
+      <div id="userFields" [style.display]="selectedRole === 'User' ? 'block' : 'none'">
+          <input required="" class="input" type="text" name="username" placeholder="Username">
+          <input required="" class="input" type="text" name="firstName" placeholder="First Name">
+          <input required="" class="input" type="text" name="lastName" placeholder="Last Name">
+  
+          
+          <!-- Add radio buttons for gender selection -->
+          <!-- <div>
+              <label>Gender:</label>
+              <label><input type="radio" name="gender" value="male"> Male</label>
+              <label><input type="radio" name="gender" value="female"> Female</label>
+          </div> -->
+      </div>
+      
+      <!-- Doctor form fields -->
+      <div id="doctorFields" [style.display]="selectedRole === 'Doctor' ? 'block' : 'none'">
+          <input required="" class="input" type="text" name="specialization" placeholder="Specialization">
+      </div>
+      
+      <!-- Lab form fields -->
+      <div id="labFields" [style.display]="selectedRole === 'Lab' ? 'block' : 'none'">
+          <input required="" class="input" type="text" name="labName" placeholder="Lab Name">
+      </div>
+      
+      <input required="" class="input" type="email" name="email" placeholder="E-mail">
+      <input required="" class="input" type="password" name="password" placeholder="Password">
+      <span class="forgot-password"><a href="#">Forgot Password ?</a></span>
+      <input class="login-button" type="submit" value="Sign In">
+  </form>
+</div>
