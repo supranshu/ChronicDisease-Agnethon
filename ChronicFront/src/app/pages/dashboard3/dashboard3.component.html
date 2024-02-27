@@ -1,3 +1,108 @@
+<<<<<<< HEAD
+<!-- New Navbar -->
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+     <a class="flex items-center space-x-3 rtl:space-x-reverse">
+       <img src="/assets/logo_white.gif" class="h-20" alt="Flowbite Logo" />
+       <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Vital Sync</span>
+     </a>
+
+     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+       <ul
+         class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+         
+         <li>
+           <a routerLink="/login" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2">Logout</a>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </nav>
+ <div>
+   <div class="user-card">
+      <div class="p-6 bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-2">User Information</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <p><strong>Username:</strong> {{ username }}</p>
+            <p><strong>Email:</strong> {{ email }}</p>
+            <p><strong>Age:</strong> {{ age }}</p>
+            <p><strong>Gender:</strong> <!-- Add gender here if available --></p>
+            <p><strong>Phone Number:</strong> {{ phoneNo }}</p>
+          </div>
+          <div>
+            <p><strong>City:</strong> {{ city }}</p>
+            <p><strong>State:</strong> {{ state }}</p>
+            <p><strong>Country:</strong> {{ country }}</p>
+            <p><strong>Disease:</strong> {{ disease }}</p>
+            <p><strong>Height:</strong> {{ height }}</p>
+            <p><strong>Weight:</strong> {{ weight }}</p>
+            <p><strong>Hypertension Blood Pressure:</strong> {{ hypertensionBloodPressure }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+ </div>
+
+ <!-- Your existing content -->
+ <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
+   type="button"
+   class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+   <span class="sr-only">Open sidebar</span>
+   <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+     <path clip-rule="evenodd" fill-rule="evenodd"
+       d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+     </path>
+   </svg>
+ </button>
+
+ <aside id="default-sidebar"
+   class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+   aria-label="Sidebar">
+   <div class="h-full bg-gray-800 shadow-xl dark:bg-gray-900">
+     <div class="flex items-center justify-between p-4 border-b dark:border-gray-700">
+       <a href="#" aria-label="Flowbite" title="Flowbite" class="inline-flex items-center space-x-2">
+         <img src="/assets/logo_white.gif" class="h-8" alt="Flowbite Logo" />
+         <span class="text-xl font-bold tracking-wide text-gray-100 uppercase">Flowbite</span>
+       </a>
+       <button data-drawer-toggle="default-sidebar"
+         class="text-gray-400 hover:text-gray-200 dark:text-gray-300 focus:outline-none focus:text-gray-200 dark:focus:text-gray-200">
+         <span class="sr-only">Close sidebar</span>
+         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+           xmlns="http://www.w3.org/2000/svg">
+           <path fill-rule="evenodd"
+             d="M13.5 6.5a.75.75 0 011.5 0v7a.75.75 0 01-1.5 0v-7zM5.793 8.75a.75.75 0 01-1.06-1.06l3.5-3.5a.75.75 0 111.06 1.06l-3.5 3.5z"
+             clip-rule="evenodd"></path>
+         </svg>
+       </button>
+     </div>
+     <nav class="overflow-y-auto">
+       <ul class="p-2 space-y-2 text-sm">
+         <li>
+           <a routerLink="/dashboard3" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">User Dashboard</a>
+         </li>
+         <li>
+           <a href="#" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Weekly Data Input</a>
+         </li>
+         <li>
+           <a href="#" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Weekly Data Metrics Graphs</a>
+         </li>
+         <li>
+           <a href="#" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200">Contact Nearest Doctor</a>
+         </li>
+       </ul>
+     </nav>
+   </div>
+ </aside>
+
+ <div class="p-4 sm:ml-64">
+   <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+     <!-- Your existing content goes here -->
+   </div>
+ </div>
+=======
 
 
   <!-- New Navbar -->
@@ -100,3 +205,4 @@
   </div>
 
 
+>>>>>>> b3541e6e9079363597dd44953ba6c24516366abc
