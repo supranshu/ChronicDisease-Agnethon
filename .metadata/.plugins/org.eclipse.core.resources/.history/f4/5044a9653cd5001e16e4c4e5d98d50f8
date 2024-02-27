@@ -1,0 +1,5 @@
+package com.chronic.repo;
+
+public interface DoctorRepo {
+
+}
