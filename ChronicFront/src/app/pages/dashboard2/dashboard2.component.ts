@@ -1,3 +1,4 @@
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -19,5 +20,33 @@ export class Dashboard2Component {
     const hoursStr = hours.toString().padStart(2, '0');
 
     return `${hoursStr}:${minutes} ${meridian}`;
+  }
+
+  api_key: string = 'AIzaSyCTSQi9GlqidQ8Vev11U0N-8ztSQrDeuuM'; // Assign your API key here
+  prompt: string = ''; // Initialize with user's prompt
+  response: string = ''; // Store the response from the Gemini bot
+
+  constructor(private http: HttpClient) { }
+
+  getGeminiBotResponse() {
+    const url = 'https://api.gemini.com/v1/bot';
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.api_key}`,
+      'Content-Type': 'application/json'
+    });
+
+    const data = {
+      prompt: this.prompt
+    };
+
+    this.http.post<any>(url, data, { headers }).subscribe(
+      (res) => {
+        this.response = res.response; // Store the response
+      },
+      (error) => {
+        console.error('Error:', error);
+        this.response = 'Error: Unable to get response from Gemini bot'; // Handle error
+      }
+    );
   }
 }
