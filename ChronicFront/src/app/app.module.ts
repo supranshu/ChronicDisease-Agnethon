@@ -59,7 +59,7 @@ import { DocappointmentComponent } from './pages/docappointment/docappointment.c
     MatInputModule,
     MatNativeDateModule,
     NgChartsModule,
-    FullCalendarModule,DatePipe,CommonModule
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
