@@ -45,7 +45,8 @@ export class NearestComponent implements OnInit {
       .subscribe(
         (response) => {
           console.log(response);
-          this.doctors = response;
+          this.doctors = response; // Assign response to this.doctors
+          localStorage.setItem("docName", this.doctors.length > 0 ? this.doctors[0].docName : ''); // Set docName based on the response
           this.loading = false;
         },
         (error) => {
@@ -55,5 +56,6 @@ export class NearestComponent implements OnInit {
         }
       );
   }
+  
 
 }

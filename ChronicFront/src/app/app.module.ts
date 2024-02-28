@@ -26,6 +26,8 @@ import { NgChartsModule } from 'ng2-charts';
 import { AppointmentComponent } from './pages/appointment/appointment.component';
 import { SymptomsComponent } from './pages/symptoms/symptoms.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { DatePipe } from '@angular/common'; // Import DatePipe
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     MatInputModule,
     MatNativeDateModule,
     NgChartsModule,
-    FullCalendarModule,
+    FullCalendarModule,DatePipe,CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

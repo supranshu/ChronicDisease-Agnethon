@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.chronic.model.Appoint;
 import com.chronic.model.Doctor;
 import com.chronic.model.User;
 import com.chronic.model.WeeklyAnalysis;
@@ -76,5 +77,19 @@ public class HomeController {
 		return service.allUsers();
 	}
 	
+	@GetMapping("/get-app/{docName}")
+	public List<Appoint> getApp(@PathVariable("docName")String docName){
+		return service.appointmentsOfDoctor(docName);
+	}
+	
+	@PostMapping("/put-app")
+	public Appoint bookApp(@RequestBody Appoint appoint) {
+		return service.putApp(appoint);
+	}
+	
+	@GetMapping("/all-doctor/{email}")
+	public Doctor getDoc(@PathVariable("email")String email) {
+		return service.docEmail(email);
+	}
 
 }

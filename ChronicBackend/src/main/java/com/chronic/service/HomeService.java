@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.chronic.model.Appoint;
 import com.chronic.model.Doctor;
 import com.chronic.model.User;
 import com.chronic.model.WeeklyAnalysis;
+import com.chronic.repo.AppointRepo;
 import com.chronic.repo.DoctorRepo;
 import com.chronic.repo.UserRepo;
 import com.chronic.repo.WeeklyAnalysisRepo;
@@ -18,13 +20,15 @@ public class HomeService {
     private final DoctorRepo doctorRepo;
     private final UserRepo userRepo;
     private final WeeklyAnalysisRepo analysisRepo;
+    private final AppointRepo appointRepo;
 
     @Autowired
-    public HomeService(BCryptPasswordEncoder encoder, DoctorRepo doctorRepo, UserRepo userRepo, WeeklyAnalysisRepo analysisRepo) {
+    public HomeService(BCryptPasswordEncoder encoder, DoctorRepo doctorRepo, UserRepo userRepo, WeeklyAnalysisRepo analysisRepo, AppointRepo appointRepo) {
         this.encoder = encoder;
         this.doctorRepo = doctorRepo;
         this.userRepo = userRepo;
         this.analysisRepo = analysisRepo;
+        this.appointRepo=appointRepo;
     } 
 
     public User userSignup(User user) {
@@ -109,6 +113,21 @@ public class HomeService {
 	public List<User> allUsers() {
 		// TODO Auto-generated method stub
 		return userRepo.findAll();
+	}
+	
+	public List<Appoint> appointmentsOfDoctor(String docName){
+		
+		return appointRepo.findByDocName(docName);
+	}
+	
+	public Appoint putApp(Appoint app) {
+		return appointRepo.save(app);
+	}
+
+	public Doctor docEmail(String email) {
+		
+		
+		return doctorRepo.findByEmail(email);
 	}
 
 	
