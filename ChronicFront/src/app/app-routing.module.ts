@@ -17,6 +17,7 @@ import { WeeklyComponent } from './pages/weekly/weekly.component';
 import { WeeklyGraphComponent } from './pages/weekly-graph/weekly-graph.component';
 import { AppointmentComponent } from './pages/appointment/appointment.component';
 import { SymptomsComponent } from './pages/symptoms/symptoms.component';
+import { DocappointmentComponent } from './pages/docappointment/docappointment.component';
 
 
 const routes: Routes = [
@@ -94,6 +95,11 @@ const routes: Routes = [
   {
     path:"symptoms",
     component:SymptomsComponent,
+    pathMatch:'full'
+  },
+  {
+    path:"docappointment",
+    component:DocappointmentComponent,
     pathMatch:'full'
   }
 ];

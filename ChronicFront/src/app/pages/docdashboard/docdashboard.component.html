@@ -11,6 +11,13 @@
                 class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
 
                 <li>
+                    <a routerLink="/docappointment" 
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 styling">View My Appointments</a>
+                </li>
+                <li>
+                    <p>Kunal</p>
+                </li>
+                <li>
                     <a routerLink="/" *ngFor="let doctor of doctors"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 styling">{{doctor.docName}}</a>
                 </li>
@@ -22,10 +29,6 @@
         </div>
     </div>
 </nav>
-
-
-
-
 <!-- Iterate over each user -->
 <ng-container *ngFor="let user of users; let i = index">
     <!-- Display three cards in each row -->
@@ -35,12 +38,11 @@
             <!-- Card grid -->
             <div class="grid grid-cols-3 gap-2">
                 <!-- Card 1 -->
-                <div
-                    class="bg-gradient-to-l from-slate-300 to-slate-100 text-slate-600 border border-slate-300 rounded-lg shadow-md flex justify-center items-center p-2">
-                    <!-- Card content -->
-                    <div>
+                <div class="w-80 bg-gradient-to-l from-slate-300 to-slate-100 text-slate-600 border border-slate-300 rounded-lg shadow-md flex justify-center items-center mr-4 mb-4"
+                    *ngIf="users[i]">
+                    <div class="grid grid-cols-1 gap-4 p-4">
                         <!-- Card Title -->
-                        <div class="text-lg font-bold capitalize mb-2">Card Title</div>
+                        <div class="text-lg font-bold capitalize">Card Title</div>
                         <!-- User information -->
                         <div>
                             <h1 class="text-base font-semibold text-gray-900">{{ users[i].fullname }}</h1>
@@ -52,10 +54,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Second card container -->
-            <div class="flex flex-wrap justify-center items-center w-full max-w-screen-xl">
                 <!-- Card 2 -->
                 <div class="w-80 bg-gradient-to-l from-slate-300 to-slate-100 text-slate-600 border border-slate-300 rounded-lg shadow-md flex justify-center items-center mr-4 mb-4"
                     *ngIf="users[i + 1]">
@@ -73,10 +71,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Third card container -->
-            <div class="flex flex-wrap justify-center items-center w-full max-w-screen-xl">
                 <!-- Card 3 -->
                 <div class="w-80 bg-gradient-to-l from-slate-300 to-slate-100 text-slate-600 border border-slate-300 rounded-lg shadow-md flex justify-center items-center mr-4 mb-4"
                     *ngIf="users[i + 2]">
@@ -96,4 +90,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </ng-container>
