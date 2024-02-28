@@ -23,10 +23,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { WeeklyGraphComponent } from './pages/weekly-graph/weekly-graph.component';
 import { NgChartsModule } from 'ng2-charts';
-
-
-
- 
+import { AppointmentComponent } from './pages/appointment/appointment.component';
+import { SymptomsComponent } from './pages/symptoms/symptoms.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -43,16 +42,24 @@ import { NgChartsModule } from 'ng2-charts';
     DocdashboardComponent,
     NearestComponent,
     WeeklyComponent,
-    WeeklyGraphComponent
+    WeeklyGraphComponent,
+    AppointmentComponent,
+    SymptomsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatSnackBarModule,
-    HttpClientModule,BrowserAnimationsModule, MatDatepickerModule, MatInputModule, MatNativeDateModule,NgChartsModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+    NgChartsModule,
+    FullCalendarModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

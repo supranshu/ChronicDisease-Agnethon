@@ -1,0 +1,154 @@
+<div class="container mx-auto mt-8">
+    <h2 class="text-2xl font-semibold mb-4">Appointment Form</h2>
+    
+    <!-- Form for collecting symptoms -->
+    <form class="space-y-4">
+      <div>
+        <label for="diabetes" class="block font-semibold">Symptoms for Diabetes:</label>
+        <div class="p-4">
+            <h2 class="text-2xl font-semibold mb-4">Symptoms Checklist</h2>
+          
+            <form>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <input type="checkbox" id="polyuria" name="symptoms" value="Polyuria">
+                  <label for="polyuria" class="ml-2">Frequent Urination (Polyuria)</label>
+                </div>
+          
+                <div class="flex items-center">
+                  <input type="checkbox" id="polydipsia" name="symptoms" value="Polydipsia">
+                  <label for="polydipsia" class="ml-2">Increased Thirst (Polydipsia)</label>
+                </div>
+          
+                <div class="flex items-center">
+                  <input type="checkbox" id="unexplained-weight-loss" name="symptoms" value="Unexplained Weight Loss">
+                  <label for="unexplained-weight-loss" class="ml-2">Unexplained Weight Loss</label>
+                </div>
+          
+                <div class="flex items-center">
+                  <input type="checkbox" id="blurred-vision" name="symptoms" value="Blurred Vision">
+                  <label for="blurred-vision" class="ml-2">Blurred Vision</label>
+                </div>
+          
+                <div class="flex items-center">
+                  <input type="checkbox" id="fatigue" name="symptoms" value="Fatigue">
+                  <label for="fatigue" class="ml-2">Fatigue</label>
+                </div>
+          
+                <div class="flex items-center">
+                  <input type="checkbox" id="slow-healing-wounds" name="symptoms" value="Slow Healing Wounds">
+                  <label for="slow-healing-wounds" class="ml-2">Slow Healing Wounds</label>
+                </div>
+          
+                <div class="flex items-center">
+                  <input type="checkbox" id="numbness-tingling" name="symptoms" value="Numbness or Tingling">
+                  <label for="numbness-tingling" class="ml-2">Numbness or Tingling</label>
+                </div>
+          
+                <!-- Add more symptoms as needed -->
+          
+              </div>
+          
+              <div class="mt-6">
+                <button routerLink="/appointment" type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>
+              </div>
+            </form>
+          </div>
+          
+      </div>
+  
+      <div>
+        <label for="hypertension" class="block font-semibold">Symptoms for Hypertension:</label>
+        <div>
+            <div class="p-4">
+              <h2 class="text-2xl font-semibold mb-4">Symptoms Checklist</h2>
+          
+              <form>
+                <div class="space-y-4">
+                  <!-- Hypertension Symptoms Checklist -->
+                  <div class="flex items-center">
+                    <input type="checkbox" id="high-blood-pressure" name="hypertension-symptoms" value="High Blood Pressure">
+                    <label for="high-blood-pressure" class="ml-2">High Blood Pressure</label>
+                  </div>
+          
+                  <div class="flex items-center">
+                    <input type="checkbox" id="headaches" name="hypertension-symptoms" value="Headaches">
+                    <label for="headaches" class="ml-2">Headaches</label>
+                  </div>
+          
+                  <div class="flex items-center">
+                    <input type="checkbox" id="nosebleeds" name="hypertension-symptoms" value="Nosebleeds">
+                    <label for="nosebleeds" class="ml-2">Nosebleeds</label>
+                  </div>
+          
+                  <div class="flex items-center">
+                    <input type="checkbox" id="dizziness" name="hypertension-symptoms" value="Dizziness">
+                    <label for="dizziness" class="ml-2">Dizziness</label>
+                  </div>
+          
+                  <div class="flex items-center">
+                    <input type="checkbox" id="fatigue" name="hypertension-symptoms" value="Fatigue">
+                    <label for="fatigue" class="ml-2">Fatigue</label>
+                  </div>
+          
+                  <!-- Add more hypertension symptoms as needed -->
+          
+                </div>
+                <div class="mt-6">
+                    <button routerLink="/appointment" type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>
+                  </div>
+              </form>
+            </div>
+          </div>
+          
+      </div>
+  
+      <div>
+        <div>
+            <label for="asthma" class="block font-semibold">Symptoms for Asthma:</label>
+            <div class="p-4">
+              <h2 class="text-2xl font-semibold mb-4">Symptoms Checklist</h2>
+          
+              <form>
+                <div class="space-y-4">
+                  <!-- Asthma Symptoms Checklist -->
+                  <div class="flex items-center">
+                    <input type="checkbox" id="shortness-of-breath" name="asthma-symptoms" value="Shortness of Breath">
+                    <label for="shortness-of-breath" class="ml-2">Shortness of Breath</label>
+                  </div>
+          
+                  <div class="flex items-center">
+                    <input type="checkbox" id="wheezing" name="asthma-symptoms" value="Wheezing">
+                    <label for="wheezing" class="ml-2">Wheezing</label>
+                  </div>
+          
+                  <div class="flex items-center">
+                    <input type="checkbox" id="coughing" name="asthma-symptoms" value="Coughing">
+                    <label for="coughing" class="ml-2">Coughing</label>
+                  </div>
+          
+                  <div class="flex items-center">
+                    <input type="checkbox" id="chest-tightness" name="asthma-symptoms" value="Chest Tightness">
+                    <label for="chest-tightness" class="ml-2">Chest Tightness</label>
+                  </div>
+          
+                  <div class="flex items-center">
+                    <input type="checkbox" id="difficulty-breathing" name="asthma-symptoms" value="Difficulty Breathing">
+                    <label for="difficulty-breathing" class="ml-2">Difficulty Breathing</label>
+                  </div>
+          
+                  <!-- Add more asthma symptoms as needed -->
+          
+                </div>
+              </form>
+            </div>
+          </div>
+          
+      </div>
+  
+      <div>
+        <button  routerLink="/appointment" type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Submit</button>
+      </div>
+    </form>
+  </div>
+  
