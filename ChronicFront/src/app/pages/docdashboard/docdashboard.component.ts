@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import baseUrl from '../../services/helper';
+import e from 'express';
 
 interface User {
   fullname: string;
@@ -38,6 +39,8 @@ interface Doctor {
 export class DocdashboardComponent implements OnInit {
   users: User[] = [];
   doctors: Doctor[] = [];
+  email = localStorage.getItem('email');
+  docName = localStorage.getItem('docName');
   ngOnInit(): void {
     this.getAllUsers();
   }
@@ -56,7 +59,8 @@ export class DocdashboardComponent implements OnInit {
     );
 }
 
-fetchDoctors(city: string, state: string, country: string): void {
+fetchDoctors(city: string, state: string, country: string): void 
+{
   
   this.http.get<Doctor[]>(`${baseUrl}/all-doctors`)
     .subscribe(
@@ -72,5 +76,19 @@ fetchDoctors(city: string, state: string, country: string): void {
       }
     );
 }
-
-}
+fetchDName(docName: string): void {
+  
+  this.http.get<Doctor[]>(`${baseUrl}/all-doctors/${this.email}`)
+    .subscribe(
+      (response) => {
+        console.log(response);
+        this.doctors = response;
+        
+      },
+      (error) => {
+        console.error('Error fetching  doctors:', error);
+        
+        
+      }
+    );
+    }}
