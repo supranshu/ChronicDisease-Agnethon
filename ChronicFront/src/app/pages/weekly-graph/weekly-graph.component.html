@@ -1,0 +1,42 @@
+<section class="p-4 weekly-metrics-graph-section">
+    <h2 class="text-2xl font-semibold mb-4">Weekly Metrics Graph</h2>
+  
+    <div *ngIf="weeklyMetricsList.length > 0">
+      <div style="display: block;">
+        <canvas baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [legend]="lineChartLegend"
+                [plugins]="lineChartPlugins">
+        </canvas>
+      </div>
+    </div>
+  
+    <div *ngIf="weeklyMetricsList.length === 0">
+      <p>No weekly metrics found.</p>
+    </div>
+</section>
+
+<aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-white" aria-label="Sidebar">
+  <nav class="h-full shadow-xl dark:bg-gray-900">
+    <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse" style="margin-top: 10px;margin-left: 20px">
+      <img src="/assets/logo_white.gif" class="h-20" alt="Flowbite Logo" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Vital Sync</span>
+    </a>
+    <ul class="p-2 space-y-2 text-sm text-black" style="margin-top: 100px;">
+      <li>
+        <a routerLink="/dashboard3" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200 text-black">User Dashboard</a>
+      </li>
+      <li>
+        <a routerLink="/weekly" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200 text-black">Weekly Data Input</a>
+      </li>
+      <li>
+        <a routerLink="/weekupdate" class="block p-2 transition-colors rounded-md bg-blue-800 hover:bg-blue-800 text-white">Weekly Data Metrics Graphs</a>
+      </li>
+      <li>
+        <a routerLink="/nearest" class="block p-2 transition-colors rounded-md dark:hover:bg-gray-700 hover:bg-gray-200 text-black">Contact Nearest Doctor</a>
+      </li>
+    </ul>
+  </nav>
+</aside>

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 
-const genAI = new GoogleGenerativeAI("AIzaSyBboXOV-pXbZEL3LLkfoISXCvPKbpXjPns");
+const genAI = new GoogleGenerativeAI("AIzaSyDAxDhxSjjAmTE4a9Xuxl6cnDOs7y8gaws");
 @Component({
   selector: 'app-dashboard2',
   templateUrl: './dashboard2.component.html',
@@ -12,7 +12,7 @@ const genAI = new GoogleGenerativeAI("AIzaSyBboXOV-pXbZEL3LLkfoISXCvPKbpXjPns");
 export class Dashboard2Component {
   
   // Replace with your actual API key and model parameters
-  apiKey = 'AIzaSyBboXOV-pXbZEL3LLkfoISXCvPKbpXjPns';
+  apiKey = 'AIzaSyDAxDhxSjjAmTE4a9Xuxl6cnDOs7y8gaws';
   model = 'gemini-pro';
   parameters = {
     safetySettings: 'MEDIUM',

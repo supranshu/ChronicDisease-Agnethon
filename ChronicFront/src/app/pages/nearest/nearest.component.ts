@@ -12,7 +12,7 @@ interface Doctor {
   email: string;
   phoneNo:string;
 }
-
+  
 @Component({
   selector: 'app-nearest',
   templateUrl: './nearest.component.html',

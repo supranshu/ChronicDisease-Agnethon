@@ -2,3 +2,13 @@
     font-size: 20px;;
     margin-top: 10px;
 }
+.footer{
+   
+    text-align: center;
+    padding: 2rem;
+    background: #263238af;
+    color: white;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    font-weight: 100;
+}

@@ -17,9 +17,15 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { Dashboard3Component } from './pages/dashboard3/dashboard3.component';
 import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
 import { NearestComponent } from './pages/nearest/nearest.component';
-
-
- 
+import { WeeklyComponent } from './pages/weekly/weekly.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+import { WeeklyGraphComponent } from './pages/weekly-graph/weekly-graph.component';
+import { NgChartsModule } from 'ng2-charts';
+import { AppointmentComponent } from './pages/appointment/appointment.component';
+import { SymptomsComponent } from './pages/symptoms/symptoms.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -34,16 +40,26 @@ import { NearestComponent } from './pages/nearest/nearest.component';
     ContactComponent,
     Dashboard3Component,
     DocdashboardComponent,
-    NearestComponent
+    NearestComponent,
+    WeeklyComponent,
+    WeeklyGraphComponent,
+    AppointmentComponent,
+    SymptomsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatSnackBarModule,
-    HttpClientModule,BrowserAnimationsModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+    NgChartsModule,
+    FullCalendarModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

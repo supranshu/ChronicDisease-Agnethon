@@ -13,6 +13,11 @@ import { Dashboard3Component } from './pages/dashboard3/dashboard3.component';
 import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
 import { NearestComponent } from './pages/nearest/nearest.component';
 
+import { WeeklyComponent } from './pages/weekly/weekly.component';
+import { WeeklyGraphComponent } from './pages/weekly-graph/weekly-graph.component';
+import { AppointmentComponent } from './pages/appointment/appointment.component';
+import { SymptomsComponent } from './pages/symptoms/symptoms.component';
+
 
 const routes: Routes = [
   {
@@ -69,6 +74,26 @@ const routes: Routes = [
   {
     path:"nearest",
     component:NearestComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'weekly',
+    component:WeeklyComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'weekupdate',
+    component:WeeklyGraphComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'appointment',
+    component:AppointmentComponent,
+    pathMatch:'full'
+  },
+  {
+    path:"symptoms",
+    component:SymptomsComponent,
     pathMatch:'full'
   }
 ];
