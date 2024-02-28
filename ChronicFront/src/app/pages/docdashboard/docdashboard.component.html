@@ -41,7 +41,7 @@
                     *ngIf="users[i]">
                     <div class="grid grid-cols-1 gap-4 p-4">
                         <!-- Card Title -->
-                        <div class="text-lg font-bold capitalize">Card Title</div>
+                        <div class="text-lg font-bold capitalize">Patient {{ i+1 }}</div>
                         <!-- User information -->
                         <div>
                             <h1 class="text-base font-semibold text-gray-900">{{ users[i].fullname }}</h1>
@@ -58,7 +58,7 @@
                     *ngIf="users[i + 1]">
                     <div class="grid grid-cols-1 gap-4 p-4">
                         <!-- Card Title -->
-                        <div class="text-lg font-bold capitalize">Card Title</div>
+                        <div class="text-lg font-bold capitalize">Patient {{ i+2 }}</div>
                         <!-- User information -->
                         <div>
                             <h1 class="text-base font-semibold text-gray-900">{{ users[i + 1].fullname }}</h1>
@@ -75,7 +75,7 @@
                     *ngIf="users[i + 2]">
                     <div class="grid grid-cols-1 gap-4 p-4">
                         <!-- Card Title -->
-                        <div class="text-lg font-bold capitalize">Card Title</div>
+                        <div class="text-lg font-bold capitalize">Patient {{ i+3 }}</div>
                         <!-- User information -->
                         <div>
                             <h1 class="text-base font-semibold text-gray-900">{{ users[i + 2].fullname }}</h1>

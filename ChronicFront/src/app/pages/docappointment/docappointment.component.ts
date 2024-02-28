@@ -13,7 +13,7 @@ interface Doctor {
 }
 interface app{
   docName: string;
-  userName: string;
+  username: string;
   date: string;
 }
 @Component({

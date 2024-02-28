@@ -39,11 +39,11 @@
                     *ngIf="apps[i]">
                     <div class="grid grid-cols-1 gap-4 p-4">
                         <!-- Card Title -->
-                        <div class="text-lg font-bold capitalize">Card Title</div>
+                        <div class="text-lg font-bold capitalize">Appointment {{ i+1 }}</div>
                         <!-- App information -->
                         <div>
-                            <h1 class="text-base font-semibold text-gray-900">{{ apps[i].userName }}</h1>
-                            <p class="text-sm text-gray-600">Description: {{ apps[i].date }}</p>
+                            <h1 class="text-base font-semibold text-gray-900">{{ apps[i].username }}</h1>
+                            <p class="text-sm text-gray-600">Date: {{ apps[i].date }}</p>
                             <!-- Add other properties as needed -->
                         </div>
                     </div>
@@ -53,11 +53,11 @@
                     *ngIf="apps[i + 1]">
                     <div class="grid grid-cols-1 gap-4 p-4">
                         <!-- Card Title -->
-                        <div class="text-lg font-bold capitalize">Card Title</div>
+                        <div class="text-lg font-bold capitalize">Appointment {{ i+2 }}</div>
                         <!-- App information -->
                         <div>
-                            <h1 class="text-base font-semibold text-gray-900">{{ apps[i + 1].userName }}</h1>
-                            <p class="text-sm text-gray-600">Description: {{ apps[i + 1].date }}</p>
+                            <h1 class="text-base font-semibold text-gray-900">{{ apps[i + 1].username }}</h1>
+                            <p class="text-sm text-gray-600">Date: {{ apps[i + 1].date }}</p>
                             <!-- Add other properties as needed -->
                         </div>
                     </div>
@@ -67,11 +67,11 @@
                     *ngIf="apps[i + 2]">
                     <div class="grid grid-cols-1 gap-4 p-4">
                         <!-- Card Title -->
-                        <div class="text-lg font-bold capitalize">Card Title</div>
+                        <div class="text-lg font-bold capitalize">Appointment {{ i+3 }}</div>
                         <!-- App information -->
                         <div>
-                            <h1 class="text-base font-semibold text-gray-900">{{ apps[i + 2].userName }}</h1>
-                            <p class="text-sm text-gray-600">Description: {{ apps[i + 2].date }}</p>
+                            <h1 class="text-base font-semibold text-gray-900">{{ apps[i + 2].username }}</h1>
+                            <p class="text-sm text-gray-600">Date: {{ apps[i + 2].date }}</p>
                             <!-- Add other properties as needed -->
                         </div>
                     </div>
