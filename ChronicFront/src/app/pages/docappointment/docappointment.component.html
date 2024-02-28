@@ -26,3 +26,57 @@
         </div>
     </div>
 </nav>
+
+<ng-container *ngFor="let app of apps; let i = index">
+    <!-- Display three cards in each row -->
+    <div class="flex flex-wrap justify-center items-center mb-4" *ngIf="i % 3 === 0">
+        <!-- First card container -->
+        <div class="w-full max-w-screen-xl">
+            <!-- Card grid -->
+            <div class="grid grid-cols-3 gap-2">
+                <!-- Card 1 -->
+                <div class="w-80 bg-gradient-to-l from-slate-300 to-slate-100 text-slate-600 border border-slate-300 rounded-lg shadow-md flex justify-center items-center mr-4 mb-4"
+                    *ngIf="apps[i]">
+                    <div class="grid grid-cols-1 gap-4 p-4">
+                        <!-- Card Title -->
+                        <div class="text-lg font-bold capitalize">Card Title</div>
+                        <!-- App information -->
+                        <div>
+                            <h1 class="text-base font-semibold text-gray-900">{{ apps[i].userName }}</h1>
+                            <p class="text-sm text-gray-600">Description: {{ apps[i].date }}</p>
+                            <!-- Add other properties as needed -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="w-80 bg-gradient-to-l from-slate-300 to-slate-100 text-slate-600 border border-slate-300 rounded-lg shadow-md flex justify-center items-center mr-4 mb-4"
+                    *ngIf="apps[i + 1]">
+                    <div class="grid grid-cols-1 gap-4 p-4">
+                        <!-- Card Title -->
+                        <div class="text-lg font-bold capitalize">Card Title</div>
+                        <!-- App information -->
+                        <div>
+                            <h1 class="text-base font-semibold text-gray-900">{{ apps[i + 1].userName }}</h1>
+                            <p class="text-sm text-gray-600">Description: {{ apps[i + 1].date }}</p>
+                            <!-- Add other properties as needed -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="w-80 bg-gradient-to-l from-slate-300 to-slate-100 text-slate-600 border border-slate-300 rounded-lg shadow-md flex justify-center items-center mr-4 mb-4"
+                    *ngIf="apps[i + 2]">
+                    <div class="grid grid-cols-1 gap-4 p-4">
+                        <!-- Card Title -->
+                        <div class="text-lg font-bold capitalize">Card Title</div>
+                        <!-- App information -->
+                        <div>
+                            <h1 class="text-base font-semibold text-gray-900">{{ apps[i + 2].userName }}</h1>
+                            <p class="text-sm text-gray-600">Description: {{ apps[i + 2].date }}</p>
+                            <!-- Add other properties as needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

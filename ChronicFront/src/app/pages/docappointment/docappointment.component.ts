@@ -11,17 +11,25 @@ interface Doctor {
   email: string;
  
 }
+interface app{
+  docName: string;
+  userName: string;
+  date: string;
+}
 @Component({
   selector: 'app-docappointment',
   templateUrl: './docappointment.component.html',
   styleUrl: './docappointment.component.css'
 })
-export class DocappointmentComponent {
+export class DocappointmentComponent implements OnInit {
   docName = localStorage.getItem('docName');
   email = localStorage.getItem('email');
   doctors: Doctor[] = [];
-
+  apps: app[] = [];
   constructor(private http: HttpClient) {}
+  ngOnInit(): void {
+    this.getApp();
+  }
   fetchDoctors(city: string, state: string, country: string): void 
 {
   
@@ -54,5 +62,21 @@ export class DocappointmentComponent {
           
         }
       );
+      }
+
+      getApp(){
+        this.http.get<app[]>(`${baseUrl}/get-app/${this.docName}`)
+        .subscribe(
+          (response) => {
+            console.log(response);
+            this.apps = response;
+            
+          },
+          (error: any) => {
+            console.error('Error fetching  doctors:', error);
+            
+            
+          }
+        );
       }
 }
